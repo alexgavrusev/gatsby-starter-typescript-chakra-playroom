@@ -1,21 +1,33 @@
 import { mode } from "@chakra-ui/theme-tools";
 
-const parts = ["content", "header", "body", "footer"];
+const parts = ["popper", "content", "header", "body", "footer", "arrow"];
 
-function baseStyleContent(props: Record<string, any>) {
+type Dict = Record<string, any>;
+
+const baseStylePopper = {
+  w: "100%",
+  maxW: "xs",
+  zIndex: 10,
+};
+
+function baseStyleContent(props: Dict) {
   return {
     bg: mode("white", "gray.700")(props),
     border: "1px solid",
     borderColor: "inherit",
     borderRadius: "md",
     boxShadow: "sm",
-    w: "100%",
-    maxW: "xs",
-    zIndex: "1",
+    zIndex: "inherit",
     _focus: {
       outline: 0,
       boxShadow: "outline",
     },
+  };
+}
+
+function baseStyleArrow(props: Dict) {
+  return {
+    bg: mode("white", "gray.700")(props),
   };
 }
 
@@ -36,12 +48,14 @@ const baseStyleFooter = {
   borderTopWidth: "1px",
 };
 
-const baseStyle = function (props: Record<string, any>) {
+const baseStyle = (props: Dict) => {
   return {
+    popper: baseStylePopper,
     content: baseStyleContent(props),
     header: baseStyleHeader,
     body: baseStyleBody,
     footer: baseStyleFooter,
+    arrow: baseStyleArrow(props),
   };
 };
 

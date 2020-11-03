@@ -1,4 +1,4 @@
-export type ColorHues = {
+export interface ColorHues {
   50: string;
   100: string;
   200: string;
@@ -9,7 +9,9 @@ export type ColorHues = {
   700: string;
   800: string;
   900: string;
-};
+}
+
+export type Colors = typeof colors;
 
 const colors = {
   transparent: "transparent",
@@ -251,7 +253,5 @@ const colors = {
     900: "#003F5E",
   },
 };
-
-export type Colors = typeof colors;
 
 export default colors;

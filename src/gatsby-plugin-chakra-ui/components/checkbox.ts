@@ -56,28 +56,26 @@ const baseStyleLabel = {
   _disabled: { opacity: 0.4 },
 };
 
-const baseStyleIcon = {
-  fontSize: "0.625rem",
-};
-
 const baseStyle = (props: Record<string, any>) => ({
   control: baseStyleControl(props),
   label: baseStyleLabel,
-  icon: baseStyleIcon,
 });
 
 const sizes = {
   sm: {
     control: { h: 3, w: 3 },
     label: { fontSize: 7 },
+    icon: { fontSize: "0.45rem" },
   },
   md: {
     control: { w: 4, h: 4 },
     label: { fontSize: 8 },
+    icon: { fontSize: "0.625rem" },
   },
   lg: {
     control: { w: 5, h: 5 },
     label: { fontSize: 9 },
+    icon: { fontSize: "0.625rem" },
   },
 };
 
